@@ -1,0 +1,102 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 3706067268dd8bf17dc193c5d674b8b3608e048273003e49d44c20eded468812
+
+name:           chess-app
+version:        0.1.0.0
+category:       Web
+homepage:       https://github.com/githubuser/chess-server#readme
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Control.Effectful
+      Data.Empty
+      Model.Action
+      Model.Effect
+      Model.Error
+      Model.Handler
+      Model.Handler.Tab
+      Model.Handler.Utils
+      Model.InitializeState
+      Model.State
+  other-modules:
+      Paths_chess_app
+  hs-source-dirs:
+      src
+  default-extensions: DataKinds TemplateHaskell GADTs RankNTypes DeriveGeneric OverloadedStrings StandaloneDeriving GeneralizedNewtypeDeriving FlexibleContexts TypeFamilies DataKinds OverloadedLabels OverloadedLists
+  build-depends:
+      base
+    , bytestring
+    , chessIO
+    , containers
+    , generic-deriving
+    , gi-gdk
+    , gi-gtk
+    , gi-gtk-declarative
+    , gi-gtk-declarative-app-simple
+    , http-types
+    , optics-core
+    , optics-th
+    , pipes
+    , serialise
+    , text
+    , time
+    , utf8-string
+    , vector
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable app
+  main-is: Main.hs
+  other-modules:
+      EffectHandler.EffectHandler
+      EffectHandler.HandleEffects
+      EffectHandler.MakeTransitionFunction
+      View.BuildGUI
+      View.Menu
+      View.Panel.ChessBoard
+      View.Panel.Panel
+      View.Tab.Tab
+      View.Tab.TabBar
+      View.Tab.Utils
+      Paths_chess_app
+  hs-source-dirs:
+      app
+  default-extensions: DataKinds TemplateHaskell GADTs RankNTypes DeriveGeneric OverloadedStrings StandaloneDeriving GeneralizedNewtypeDeriving FlexibleContexts TypeFamilies DataKinds OverloadedLabels OverloadedLists
+  ghc-options: -threaded
+  build-depends:
+      base
+    , bytestring
+    , chess-app
+    , chessIO
+    , containers
+    , generic-deriving
+    , gi-gdk
+    , gi-gtk
+    , gi-gtk-declarative
+    , gi-gtk-declarative-app-simple
+    , http-types
+    , optics-core
+    , optics-th
+    , pipes
+    , serialise
+    , text
+    , time
+    , utf8-string
+    , vector
+    , wai
+    , warp
+  default-language: Haskell2010

@@ -1,0 +1,62 @@
+name:                chess-app
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/Simre1/chess-server#readme
+license:             BSD3
+author:              Simon Reitinger
+# maintainer:          .com
+copyright:           2020 Simon Reitinger
+# category:            Chess, GTK
+extra-source-files:
+- README.md
+
+default-extensions:
+  - DataKinds
+  - TemplateHaskell
+  - GADTs
+  - RankNTypes
+  - DeriveGeneric
+  - OverloadedStrings
+  - StandaloneDeriving
+  - GeneralizedNewtypeDeriving
+  - FlexibleContexts
+  - TypeFamilies
+  - DataKinds
+  - OverloadedLabels
+  - OverloadedLists
+
+dependencies:
+  - base
+  - optics-core
+  - optics-th
+  - text
+  - containers
+  - warp
+  - wai
+  - serialise
+  - bytestring
+  - utf8-string
+  - http-types
+  - generic-deriving
+  - chessIO
+  - gi-gtk
+  - gi-gdk
+  - gi-gtk-declarative
+  - gi-gtk-declarative-app-simple
+  - pipes
+  - vector
+  - time
+
+
+library:
+  source-dirs: [src]
+
+executables:
+  app:
+    source-dirs: [app]
+    main:        Main.hs
+    ghc-options:
+      - -threaded
+    dependencies:
+      - chess-app
